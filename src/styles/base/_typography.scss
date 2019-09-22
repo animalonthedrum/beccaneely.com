@@ -1,0 +1,14 @@
+
+//FONT
+@import url("https://use.typekit.net/gcs6nvk.css");
+$font-header:'granville';
+$font-primary:'sofia-pro-soft', sans-serif;
+$font-secondary: 'sofia-pro', sans-serif;
+//WEIGHTS
+$font-weight-lt:300;
+$font-weight-reg:400;
+$font-weight-bold:700;
+
+* {
+  font-family: $font-primary;
+}

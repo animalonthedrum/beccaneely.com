@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
     <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/737218/727688/css/fonts.css" />
     </Helmet>
         <DesktopNav/>
-        <main style={{marginTop:'180px'}}>{children}</main>
+        <main>{children}</main>
         <Footer/>
         <VerticalSocial/>
     </>

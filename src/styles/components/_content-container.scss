@@ -7,3 +7,10 @@
 .full-width {
     @include full-width;
 }
+
+main {
+    padding-top: 180px;
+    @include touch-device {
+        padding-top: 150px;
+    }
+}

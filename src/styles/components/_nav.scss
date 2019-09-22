@@ -6,31 +6,65 @@
     transition: top 0.8s;
     background-color: white;
   }
-  
   .header--hidden {
     top: -$nav-height;
+    @include touch-device {
+        top:-$nav-height-mobile;
+    }
   }
 
 nav {
-    max-width: $max-content-width;
+    max-width: $content-container;
     margin:0 auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left:5px;
+    padding-right: 5px;
     display: flex;
     height: $nav-height;
     align-items: center;
     background-color: transparent;
     z-index: 10;
-
+    @include touch-device {
+        height:$nav-height-mobile;
+    }
     .brand {
-        flex: 1;
+        flex: 1 1 auto;
         svg {
             max-width: 228px;
             max-height: 70px;
+            @include touch-device {
+                max-width: 150px;
+                max-height: 60px;
+            }
         }
     }
     a {
     @include nav-item;
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    z-index: 2;
+    &:hover {
+        .sqiggy path {
+            animation: dash .8s ease-in-out forwards;
+          }
+    }
+    .sqiggy {
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        height: 9px;
+        width: 100%;
+        z-index: 1;
+        path {
+            stroke-dasharray: 110;
+            stroke-dashoffset: 110;
+        }
+    }
+    }
+    a:not(.brand){
+        @include touch-device{
+            display: none;
+        }
     }
     ul {
         margin-left: 0;
@@ -42,20 +76,28 @@ nav {
         padding-top: 0;
         margin-bottom: 0;
         &.dropdown {
+            @include touch-device{
+                display: none;
+            }
             span {
                 @include nav-item;
             }
         }
         &.dropdown-menu {
             background-color: white;
-            box-shadow: 0px 1px 3px 0px rgba(35,40,43,.3), 0px 12px 16px 2px rgba(35,40,43,.2);
-            min-width: 300px;
+            box-shadow: 0px 1px 3px 0px rgba(35,40,43,.3);
+            max-width: 200px;
             padding-top: 24px;
             padding-bottom: 24px;
             padding-left: 12px;
             padding-right: 12px;
             z-index: 10;
-     
+            right: 50%;
+            transform: translateX(50%);
+            top:30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         li {
             list-style: none;
@@ -70,50 +112,38 @@ nav {
                 padding-bottom: 10px;
                 padding-left: 10px;
                 padding-right: 10px;
-                border-radius: 8px;
-                min-width: 276px;
-                // font-family: $se-font-family-gotham;
-                // font-weight: $se-font-weight-normal;
-                // font-size: $;
-                transition:color 300ms linear, background-color 300ms linear, box-shadow 300ms linear;
+                transition:color $transition-linear;
                 &:hover {
-                    color: $lime;
-                    background-color: purple;
-                    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.30), 0 1px 3px 0 rgba(35,40,43,0.20);
+                    color: purple;
                 }
             }
         }
         .dropdown-toggler {
-            // font-family: $se-font-family-gotham;
-            // font-weight: $se-font-weight-semi-bold;
-            // font-size: $se-font-size-400;
-            // color: color($se-white);
             position: relative;
             display: flex;
             align-items: center;
             height: 100%;
+            padding-top: 10px;
+            padding-bottom: 10px;
             &:hover {
                 cursor: pointer;
+                &:not(.open){
+                    svg {
+                        animation-name: bounce;
+                        animation-duration: .5s;
+                        animation-delay: .2s;
+                        animation-fill-mode: both;
+                        animation-timing-function: linear;
+                        animation-iteration-count: 2;
+                    }
+                }   
+           
               }
             svg {
                 margin-left: 5px;
                 transition: transform 300ms linear;
             }
-            &:after {
-                content:'';
-                width: 0;
-                height: 4px;
-                background-color: yellow;
-                position: absolute;
-                bottom: 0px;
-                left: 0;
-                display: block;
-                transition: width 100ms linear;
-            }
             &.open {
-               &:after {
-                   width: 100%;
-               }
                svg {
                    transform: rotate(180deg);
                }
@@ -122,6 +152,27 @@ nav {
         }
     }
     .mobile-menu-toggle-button {
-        display: none!important;
+        display: none;
+        @include touch-device{
+            display: flex;
+        }
     }
 }
+
+@keyframes dash {
+    from {
+      stroke-dashoffset: 110;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }

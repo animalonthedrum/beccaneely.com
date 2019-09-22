@@ -38,6 +38,23 @@ $device-md-mx:1024px;
   padding-left: $padding;
   padding-right: $padding;
   text-transform: uppercase;
+  letter-spacing: 4px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@mixin mobile-nav-item($font:$font-header, $size:48px, $color:$black, $padding:10px) {
+  font-family: $font;
+  font-weight: $font-weight-bold;
+  font-size: $size;
+  color: $color;
+  line-height: 1.2;
+  text-decoration: none;
+  padding-left: $padding;
+  padding-right: $padding;
+  text-transform: none;
+  letter-spacing: 4px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 @mixin content-container($max:$content-container){

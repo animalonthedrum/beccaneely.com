@@ -22,7 +22,7 @@ const VerticalSocial = () => (
         <a  target="_blank" rel="noopener noreferrer" href="https://facebook.com">facebook</a>
     </li>
     <li>
-        <a  target="_blank" rel="noopener noreferrer" href="https://instagram.com">instagam</a>
+        <a  target="_blank" rel="noopener noreferrer" href="https://instagram.com">instagram</a>
     </li>
     <li>
         <a  target="_blank" rel="noopener noreferrer" href="https://dribbble.com">dribble</a>

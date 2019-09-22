@@ -47,8 +47,7 @@ const Dropdown = ({ value, pages, title = "Dropdown" }) => {
       {open && (
         <ul className="dropdown-menu" 
         style={{
-            position: `absolute`,
-            right:`0`
+            position: `absolute`
           }}>
           {pages.map((pages, index) => (
             <li key={index} className="dropdown-menu-item" onClick={e => handleChange(pages)}>

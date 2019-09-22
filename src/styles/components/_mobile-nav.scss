@@ -1,16 +1,22 @@
 nav {
+  @include touch-device {
+    background-color: lightgray;
+    svg {
+      path {
+        // fill: $white;
+      }
+    }
+  }
   position: relative;
-  // @include gutter-small {
       .mobile-menu-toggle-button {
         height: 20px;
         width: 20px;
         padding-top: 0;
         padding-bottom: 0;
         padding-left: 0;
-        padding-right: 0;
+        margin-right:50px;
         border: 0;
         background-color: transparent;
-        display: flex;
         flex-direction: column;
         justify-content: space-around;
         position: relative;
@@ -25,13 +31,21 @@ nav {
       .mobile-menu {
         height: 100vh;
         width: 100%;
-        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content:center;
+        background-color: $hoody;
         box-shadow: 0 1px 3px 0 rgba(35,40,43,0.30), 0 4px 6px 1px rgba(35,40,43,0.20);
         position: absolute;
-        top: 60px;
+        top: 0px;
         left:0;
         padding-left: 12px;
         padding-right: 12px;
+        a{
+          display: flex;
+          @include mobile-nav-item;
+        }
         .dropdown {
           position: initial;
           display: flex;
@@ -39,12 +53,15 @@ nav {
           justify-content: center;
           padding-left: 0;
           padding-right: 0;
-          min-height: 78px;
           margin-top: 12px;
           margin-bottom: 12px;
-          border-bottom: 2px solid black;
           .dropdown-toggler {
+            @include mobile-nav-item;
             min-height: 50px;
+            svg {
+              height: 32px;
+              width: 32px;
+            }
             &.open {
               &:after {
                 display: none;
@@ -63,8 +80,41 @@ nav {
           box-shadow: none;
           padding-top: 12px;
           padding-bottom: 22px;
+          right: 0;
+          transform: none;
+          align-items: flex-start;
+          background-color: transparent;
+          box-shadow: none;
+          li a {
+            @include mobile-nav-item($font:$font-primary, $size:32px);
+            text-transform: uppercase;
+          }
+          
         }
       }
 
     }
-  // }
+
+.mobile-nav-open {
+  nav {
+    .brand {
+     display: none;
+    }
+  }
+  .mobile-menu {
+    .logo {
+      width: 100%;
+      height: auto;
+      padding-left: 50px;
+      padding-right: 50px;
+      margin-bottom: 50px;
+      margin-top: -50px;
+    }
+  }
+  .mobile-menu-toggle-button {
+    flex: 1 1 auto;
+    align-items: flex-end;
+    margin-left: 30px;
+    outline: none;
+  }
+}

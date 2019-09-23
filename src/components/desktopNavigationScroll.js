@@ -36,7 +36,8 @@ function Squiggy() {
     
         this.state = {
           prevScrollpos: window.pageYOffset,
-          visible: true
+          visible: true,
+          navColor:'transparent'
         };
       }
     
@@ -73,16 +74,16 @@ function Squiggy() {
         <Link to='/' className='brand'>
           <Logo/>
         </Link>
-        <Link to='/work' className='nav-item'>Work<Squiggy/></Link>
-        <Link to='/about' className='nav-item'>About<Squiggy/></Link>
+        <Link to='/work' activeClassName="active" className='nav-item'>Work<Squiggy/></Link>
+        <Link to='/about' activeClassName="active" className='nav-item'>About<Squiggy/></Link>
         <Dropdown
             title="Shop"
             pages={[
-            <Link to="/prints">Prints</Link>,
-            <Link to="/paintings">Paintings</Link>,
+            <a href="https://www.etsy.com/shop/BeccaNeelyDesignCo">Prints</a>,
+            <Link to="/paintings" activeClassName="active">Paintings</Link>,
             ]}//end of pages
           />
-        <Link to='/contact' className='nav-item'>Contact<Squiggy/></Link>
+        <Link to='/contact' activeClassName="active" className='nav-item'>Contact<Squiggy/></Link>
 
           <MobileNavigation/>
         </nav>

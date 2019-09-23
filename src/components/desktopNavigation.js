@@ -25,13 +25,13 @@ function DesktopNavigation() {
         <Link to='/' className='brand'>
           <Icon/>
         </Link>
-        <Link to='/work' className='nav-item'>Work</Link>
-        <Link to='/about' className='nav-item'>About</Link>
+        <Link to='/work' activeClassName="active" className='nav-item'>Work</Link>
+        <Link to='/about' activeClassName="active" className='nav-item'>About</Link>
         <Dropdown
             title="Shop"
             pages={[
-            <Link to="/prints">Prints</Link>,
-            <Link to="/paintings">Paintings</Link>,
+            <Link to="/prints" activeClassName="active">Prints</Link>,
+            <Link to="/paintings" activeClassName="active">Paintings</Link>,
             ]}//end of pages
           />
         <Link to='/contact' className='nav-item'>Contact</Link>

@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from "prop-types"
 
-const Container = ({ children }) => {
+const Container = ({ children, name }) => {
 
   return (
-    <div className='container'>
+    <div className={'container ' + name}>
       {children}
     </div>
   )

@@ -78,5 +78,18 @@ $device-md-mx:1024px;
   margin-left: auto;
   margin-right:auto;
   overflow: hidden;
-
+}
+@mixin hero-expand($bg:purple, $align:center, $justify:center, $direction:column) {
+height: 100vh;
+max-width: 100vw;
+width: 100%;
+display: flex;
+flex-direction: $direction;
+justify-content: $justify;
+align-items: $align;
+margin-left: auto;
+margin-right:auto;
+overflow: hidden;
+background-color: $bg;
+padding-top: $nav-height;
 }

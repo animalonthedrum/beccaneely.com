@@ -1,16 +1,84 @@
-.container {
-    @include content-container;
-}
-.max-container {
-    @include max-content;
-}
-.full-width {
-    @include full-width;
-}
-
-main {
+* {
+    box-sizing: border-box;
+   }
+   *:before,
+   *:after {
+    box-sizing: border-box;
+   }
+   html,
+   body {
+    height: 100%;
+    position: relative;
+   }
+   .intro-container {
+       header {
+           background-color: transparent;
+       }
+       main {
+           padding-top: 0;
+       }
+   }
+   main {
+    min-height: 100vh; /* will cover the 100% of viewport */
+    height: 100%;
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-bottom: 100px; /* height of your footer */
     padding-top: 180px;
     @include touch-device {
-        padding-top: 150px;
+      padding-top: 150px;
     }
+   }
+   .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+   }
+.hero-expand {
+  @include hero-expand;
 }
+.container {
+  @include content-container;
+}
+.max-container {
+  @include max-content;
+}
+.full-width {
+  @include full-width;
+}
+.row-two-one {
+  display: flex;
+  flex-wrap: wrap;
+  div {
+    flex: 1 1 auto;
+  }
+  div:first-of-type {
+    flex: 2 1 auto;
+  }
+}
+.row-one-two {
+    display: flex;
+    flex-wrap: wrap;
+    div {
+      flex: 2 1 auto;
+    }
+    div:first-of-type {
+      flex: 1 1 auto;
+    }
+  }
+  .row-one-one {
+    display: flex;
+    flex-wrap: wrap;
+    div {
+      flex: 1 1 auto;
+    }
+  }
+  .row{
+    display: flex;
+    flex-wrap: wrap;
+    div {
+      flex: 1 1 auto;
+  }
+}
+

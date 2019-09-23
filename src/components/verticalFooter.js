@@ -19,13 +19,13 @@ const VerticalSocial = () => (
 <ul>
 <Signiture/>
     <li>
-        <a  target="_blank" rel="noopener noreferrer" href="https://facebook.com">facebook</a>
+        <a  target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/beccaneelydesignco">facebook</a>
     </li>
     <li>
-        <a  target="_blank" rel="noopener noreferrer" href="https://instagram.com">instagram</a>
+        <a  target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/beccaneely">instagram</a>
     </li>
     <li>
-        <a  target="_blank" rel="noopener noreferrer" href="https://dribbble.com">dribble</a>
+        <a  target="_blank" rel="noopener noreferrer" href="https://dribbble.com/beccaneely">dribble</a>
     </li>
 </ul>
 </div>

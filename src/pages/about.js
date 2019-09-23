@@ -18,8 +18,8 @@ const About = () => {
 `)
 
 return (
-  <Layout>
-    <Container>
+  <Layout navType='intro-container'>
+    <Container name='container'>
     <Img fluid={data.weenie.childImageSharp.fluid} />
     <Img fluid={data.weenie.childImageSharp.fluid} />
     <Img fluid={data.weenie.childImageSharp.fluid} />

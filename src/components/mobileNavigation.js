@@ -35,16 +35,16 @@ export default class MobileNavigation extends Component {
           <div className="mobile-menu">
           <Logo/>
             <ul className='mobile-menu-items'>
-              <Link to='/work' className='nav-item' onClick={this.onClick}>Work</Link>
-              <Link to='/about' className='nav-item' onClick={this.onClick}>About</Link>
+              <Link to='/work' activeClassName="active" className='nav-item' onClick={this.onClick}>Work</Link>
+              <Link to='/about' activeClassName="active" className='nav-item' onClick={this.onClick}>About</Link>
               <Dropdown
                 title="Shop"
                 pages={[
-                  <Link to="/prints" onClick={this.onClick}>Prints</Link>,
-                  <Link to="/paintings" onClick={this.onClick}>Paintings</Link>,
+                  <a href="https://www.etsy.com/shop/BeccaNeelyDesignCo"  onClick={this.onClick}>Prints</a>,
+                  <Link to="/paintings" activeClassName="active" onClick={this.onClick}>Paintings</Link>,
                 ]}//end of pages
               />
-              <Link to='/contact' className='nav-item' onClick={this.onClick}>Contact</Link>
+              <Link to='/contact' activeClassName="active" className='nav-item' onClick={this.onClick}>Contact</Link>
             </ul>
           </div>,
         ] : null}

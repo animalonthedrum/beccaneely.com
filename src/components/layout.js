@@ -10,18 +10,21 @@ import "./layout.scss"
 import "../index.scss"
 
 
-const Layout = ({ children }) => {
+const Layout = ({ children, name, navType }) => {
 
   return (
-    <>
+    <div className={navType}>
     <Helmet>
     <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/737218/727688/css/fonts.css" />
     </Helmet>
         <DesktopNav/>
-        <main>{children}</main>
+        <main className={name}>
+        {children}
         <Footer/>
+        </main>
+       
         <VerticalSocial/>
-    </>
+    </div>
   )
 }
 
